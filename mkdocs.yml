@@ -14,7 +14,7 @@ markdown_extensions:
 nav:
   - 'CLI':
     - 'Introduction': 'CLI/index.md'
-    - 'Creating minictl CLI': 'CLI/creating-minictl'
-    - 'Creating Github repository': 'CLI/creating-github-repository'
-    - 'Building artefact': 'CLI/building-artefact'
+    - 'Creating minictl CLI': 'CLI/creating-minictl/index.md'
+    - 'Creating Github repository': 'CLI/creating-github-repository/index.md'
+    - 'Building artefact': 'CLI/building-artefact/index.md'
   
