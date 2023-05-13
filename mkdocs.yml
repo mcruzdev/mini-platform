@@ -11,3 +11,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+nav:
+  - 'CLI':
+    - 'Introduction': 'CLI/index.md'
+    - 'Creating minictl CLI': 'CLI/creating-minictl'
+    - 'Creating Github repository': 'CLI/creating-github-repository'
+    - 'Building artefact': 'CLI/building-artefact'
+  

@@ -1,5 +1,7 @@
 # Introduction
 
+Here you will see how to create a Github Organization and automate the process to create a repository.
+
 ## Creating Github Organization
 
 We will use an Org to simulate a real world (or aproximatelly one). 
