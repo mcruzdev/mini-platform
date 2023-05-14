@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: create-version-run
+  namespace: tekton-pipelines
+spec:
+  serviceAccountName: github-private
+  params:
+  - name: org
+    value: mini-plaform
+  - name: application
+    value: team-api
+  pipelineRef:
+    name: create-version
+  workspaces:
+    - name: create-version-workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi

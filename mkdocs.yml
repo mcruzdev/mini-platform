@@ -17,4 +17,7 @@ nav:
     - 'Creating minictl CLI': 'CLI/creating-minictl/index.md'
     - 'Creating Github repository': 'CLI/creating-github-repository/index.md'
     - 'Building artefact': 'CLI/building-artefact/index.md'
+  - 'Continuous Integration':
+    - 'Introduction': 'CI/index.md'
+    - 'Continuous Integration with Tekton': 'CI/installing-kind/index.md' 
   

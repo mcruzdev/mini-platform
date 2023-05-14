@@ -1,0 +1,40 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: create-version
+  namespace: tekton-pipelines
+spec:
+  workspaces:
+    - name: create-version-workspace
+  params:
+    - name: application
+      type: string
+      description: Application's name to build the repo url
+    - name: org
+      type: string
+      description: Organization's name to build the repo url
+  tasks:
+    - name: clone-repo
+      taskRef:
+        name: git-clone
+      params:
+        - name: url
+          value: https://github.com/$(params.org)/$(params.application)
+        - name: revision
+          value: main
+      workspaces:
+        - name: output
+          workspace: create-version-workspace
+    - name: build-docker-image
+      runAfter:
+        - clone-repo
+      taskRef:
+        name: buildpacks
+      params:
+        - name: APP_IMAGE
+          value: "$(params.org)/$(params.application)"
+        - name: BUILDER_IMAGE
+          value: paketobuildpacks/builder-jammy-base:latest
+      workspaces:
+        - name: source
+          workspace: create-version-workspace
